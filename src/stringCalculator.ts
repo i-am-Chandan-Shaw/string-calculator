@@ -14,5 +14,11 @@ export function add(numbers: string): number {
     .replace(/\n/g, delimiter)
     .split(delimiter)
     .map(num => parseInt(num, 10));
+
+  const negativeNumbers = nums.filter(num => num < 0);
+  if (negativeNumbers.length > 0) {
+    throw new Error(`negative numbers not allowed: ${negativeNumbers.join(",")}`);
+  }
+
   return nums.reduce((a, b) => a + b, 0);
 }
