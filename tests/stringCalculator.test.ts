@@ -11,3 +11,7 @@ test('should return the number itself for a single number', () => {
 test('should return the sum for two numbers', () => {
   expect(add("1,5")).toBe(6);
 });
+
+test('should handle custom delimiters', () => {
+  expect(add("//;\n1;2")).toBe(3);
+});
